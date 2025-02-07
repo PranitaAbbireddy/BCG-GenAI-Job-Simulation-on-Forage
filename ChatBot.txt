@@ -1,0 +1,31 @@
+This chatbot is designed to answer financial queries about Microsoft, Tesla, and Apple based on a pre-analyzed dataset. It extracts financial metrics like total revenue, net income, total assets, total liabilities, and cash flow from operating activities for a given company and year. The chatbot allows users to ask structured questions and returns data directly from the dataset.
+
+The chatbot expects queries in a structured format, such as:
+- "What is the total revenue of Microsoft in 2023?"
+- "How has the net income of Tesla changed in 2024?"
+
+It extracts three key components from the input using regular expressions (Regex):
+- Company Name (Microsoft, Tesla, Apple)
+- Year (e.g., 2022, 2023, 2024)
+- Financial Metric (e.g., total revenue, net income, etc.)
+
+The chatbot loads the financial dataset using Pandas. It filters the dataset based on the extracted company and year. The chatbot then retrieves and returns the requested financial metric. If the extracted components match the dataset, the chatbot displays the corresponding value. If the query is invalid or the data is missing, an appropriate error message is returned.
+
+The chatbot supports the following types of queries:
+
+- "What is the total revenue of Apple in 2023?"
+- "What is the net income of Tesla in 2024?"
+- "How many total assets did Microsoft have in 2022?"
+- "What were Tesla’s total liabilities in 2023?"
+- "How much was Apple's cash flow in 2024?"
+- "How has the net income of Microsoft changed in 2024?"
+
+The chatbot only recognizes a predefined set of financial queries. It does not support conversational or free-form financial analysis.
+
+The chatbot relies on a static dataset and does not fetch real-time financial data. If the dataset lacks a value for a given company and year, it cannot provide an answer.
+
+- Users must phrase their queries in a structured format (e.g., "What is the total revenue of Microsoft in 2023?").
+- Misspellings or alternative wordings (e.g., "Tell me how much Microsoft earned in 2023") may not be recognized.
+- No Advanced Natural Language Processing (NLP)
+
+The chatbot operates using if-else statements and regex-based extraction, rather than AI-powered NLP models. It cannot understand context beyond the structured format of queries.
